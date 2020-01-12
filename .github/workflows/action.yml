@@ -1,0 +1,19 @@
+name: "Github Actions Weather Bot"
+
+on:
+    schedule:
+        - '5 * * * *'
+
+jobs:
+    bot:
+        steps:
+            - name: "Install node"
+              uses: actions/setups-node@v1
+            - name: "Install NPM dependecies"
+              run: npm install 
+            - name: "Run code"
+              run: node index.js
+              env:
+                WEATHER_API_TOKEN: ${{ secrets.WEATHER_API_TOKEN}}
+                TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN}}
+                TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID}}
