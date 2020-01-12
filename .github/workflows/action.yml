@@ -11,7 +11,7 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: "Install node"
-              uses: actions/setups-node@v1
+              uses: actions/setup-node@v1
             - name: "Install NPM dependecies"
               run: npm install 
             - name: "Run code"
